@@ -6,33 +6,24 @@ body, html {
     background-color: #f9f9f9;
     color: #027352;
     font-family: Tahoma;
-
     font-size: 12px;
     line-height: 22px;
-
     animation: mymove 1.5s;
 }
 a{
     text-decoration: none;
 }
-
-
 /*******************主页面配置************/
-
 #first_page{
     height: 100vh;
     background-color: #88ccae;
-    background-image: url("../pic/800.jpg");
+    background-image: url("../pic/805.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
-
     overflow: hidden;
-
 }
-
-
 @keyframes mymove
 {
     from  {opacity:0;}
@@ -44,17 +35,12 @@ a{
     height: 70px;
     background-color: rgba(255, 255, 255, 0);
     color: #027352;
-
 }
 /* ****移动上去时候的样子-----------*/
 #navbar:hover{
     background-color: #1ABC9C;
-
     transition-duration: 0.5s;
 }
-
-
-
 /* 导航栏左右两边的菜单*/
 #navbar a{
     display: inline-block;
@@ -79,15 +65,14 @@ a{
     /*margin-top: 22px;*/
     margin-right: 40px;
     user-select: none;
-
 }
 #navbar_right_menu li{
     float: left;
     display: block;
-    width: 100px;
+    width: 150px;
     /*height: 70px;*/
     /*margin-left: 10px;*/
-    margin-right: 10px;
+    margin-right: 0px;
     line-height: 69px;
     text-align: center;
     font-size: 19px;
@@ -104,61 +89,127 @@ a{
 }
 
 
-
+#loading_bar{
+    position: fixed;
+    display: none;
+    z-index: 1;
+    top: 0px;
+    width: 60%;
+    height: 8px;
+    background-color: #4caf50;
+}
 /****************导航栏内容完毕*************/
 /**头像内容**/
-
 #head_portrait{
-
-    margin-top: 200px;
     border-radius: 50%;
     font-family: 幼圆;
 }
-
 #head_portrait img{
+    /*max-height: 400px;*/
+    max-width: 300px;
     margin: 0px auto;
-    width: 150px;
+    width: 90%;
     border-radius: 50%;
 }
-
 /*本人介绍*/
-
 #my_description{
     margin-top: 150px;
     font-family: proxima-nova,sans-serif;
-    font-size: 20px;
+    font-size: 21px;
     line-height: 1.5;"
 }
 /*第一部分完毕*/
-
-
 #mid_message{
     font-family: "Lato", sans-serif;
-    color: #669f82;
+    color: #598e6f;
     line-height: 1.8;
-    font-size: 16px;
-
+    font-size: 20px;
 }
-
 #mid_first_para{
     position: relative;
     display: block;
 }
-
-.swiper-slide{
-    background-image: url('../pic/803.jpg');
-    width:100px;
-    height: 120px
+.friends_show_1{
+    color: white;
+    user-select: none;
+    height: 150px;
+    padding: 20px 0;
+}
+.friends_show_1 div{
+    padding: 10px 10px;
+    height: 110px;
+    border-right: 1px solid #f4f4f4;
+}
+.friends_show_4 div{
+    border-right: 0px;
 }
 
-#second_page{
-    background-color: #048e7c;
+
+#icon_list svg{
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+#pre_second_page{
+    background-color: #14a99e;
     background-image: url("../pic/802.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
-
-    height: 100vh;
+    margin-top: 120px;
+    height: 40vh;
     /*height: 150px;*/
+}
+
+#second_page{
+    height: auto;
+}
+
+#third_page{
+    background-color: #720e12;
+    background-image: url("../pic/804.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    margin-top: 50px;
+    height: 40vh;
+}
+
+
+#foot{
+    border-top: 1px solid #cccccc;
+}
+
+
+
+/*模态框*/
+
+#model_box{
+    display: none;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    opacity: 0  ;
+    background-color: rgba(0, 0, 0, 0.79);
+    color: white;
+
+}
+
+
+
+/**回到顶部*/
+#backtoTop{
+    position: fixed;
+    display: none;
+    cursor: pointer;
+    right: 10px;
+    bottom: 0px;
+    /*background-color: #761c19;*/
+    width: 50px;
+    height: 50px;
 }
