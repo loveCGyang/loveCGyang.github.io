@@ -25,28 +25,81 @@ for (;i<len;i++){
         }
     };
 }
-
-
 /**li标签点击滑动事件**/
 var backtotop= getId('backtoTop');
 backtotop.onclick=function () {
   scrollTo('html',1000);
 };
-
+/**输入框判断*/
 var fakebtn=getId('fakebtn');
+var fakebtn2=getId('fakebtn2');
+var model1=getId('model-1');
+var model2=getId('model-2');
+var model3=getId('model-3');
+var model4=getId('model-4');
+var model5=getId('model-5');
+var input_name = getId('input_name');
 fakebtn.onclick=function(){
-  return false;
+    modelShow(0);
+    if (input_name.value.length < 2){
+        console.log('l:'+input_name.value.length);
+        model2.style.display = 'none';
+        model1.style.display = 'none';
+        model3.style.display = 'none';
+        model4.style.display = 'block';
+        if (input_name.value.length === 0) {
+
+            model4.children[0].innerText = '兄弟，你没输入东西你点我干什么！';
+        }else {
+            model4.children[0].innerText = '您的名字不会就一个字吧....我不信';
+        }
+
+    }else {
+        if(input_name.value === '王文文'|| input_name.value === 'www'){
+            model3.children[0].innerText='Only For You';
+            model3.style.display = 'block';
+            model3.children[1].children[0].innerText=input_name.value;
+            model3.children[2].innerHTML = '<p>&nbsp;&nbsp;&nbsp;&nbsp;首先很高兴你能够来我的博客，对此表示深深的感谢！（鞠躬）</p><p>&nbsp;&nbsp;&nbsp;&nbsp;这里有一首小诗：</p><p>&nbsp;&nbsp;&nbsp;&nbsp;低的头走在路一旁的是我</p><p>&nbsp;&nbsp;&nbsp;&nbsp;别人不明白我内心是悲还是喜</p><p>&nbsp;&nbsp;&nbsp;&nbsp;商店的布偶又是谁的新欢</p><p>&nbsp;&nbsp;&nbsp;&nbsp;雨停，停下脚步，原来是你</p><p>&nbsp;&nbsp;&nbsp;&nbsp;（相视）...</p>'
+        }else{
+            model2.style.display = 'block';
+            if(input_name.value.includes('爸爸')){
+                model2.children[1].children[0].innerText= input_name.value.replace('爸爸','儿子');
+            }else if(input_name.value.includes('父亲')){
+                model2.children[1].children[0].innerText=input_name.value.replace('父亲','儿子');
+            }else if(input_name.value.includes('亲爹')){
+                model2.children[1].children[0].innerText=input_name.value.replace('亲爹','儿子');
+            }else{
+                model2.children[1].children[0].innerText=input_name.value;
+            }
+        }
+    }
+    return false;
 };
+
+// 赞助的事情哈哈哈哈
+fakebtn2.onclick = function () {
+    modelShow(0);
+    model3.style.display = 'block';
+    model3.children[1].children[0].innerText='同学';
+    model3.children[0].innerText='在线资助山区少年';
+    model3.children[2].innerHTML = '<p>&nbsp;&nbsp;&nbsp;&nbsp;首先很高兴你能够来我的博客，对此表示深深的感谢！（鞠躬）</p><p>&nbsp;&nbsp;&nbsp;&nbsp;其实进入网页的时候相信你也发现了，加载网页的过程比较长</p><p>&nbsp;&nbsp;&nbsp;&nbsp;因为我这个网站是借助Github的一个功能实现的</p><p>&nbsp;&nbsp;&nbsp;&nbsp;而且由于天朝的种种原因，访问起来比设在国内的站点速度较慢</p><p>&nbsp;&nbsp;&nbsp;&nbsp;假如有一台服务器的话，这个速度就可以提升不少，而且再借助添加AJAX的话速度会更快</p><p>&nbsp;&nbsp;&nbsp;&nbsp;而且有服务器之后，就可以完成网页与用户之间的交互，比如评论功能，访客量，根据不同用户分发功能等等。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;如果您有兴趣的话可以选择<span class="w3-flat-nephritis" style="cursor: pointer">赞助</span>我</p>'
+};
+
+function zanZhu() {
+
+    modelShow(0);
+    model5.children[0].innerText='资助山区少年买个服务器';
+    model5.style.display = 'block';
+}
 
 
 /**图标点击事件**/
 var model_box = getId("model_box");
 model_box.onclick = function () {
-
     $(this).animate({opacity:0},500);
-
     setTimeout(function () {
         model_box.style.display='none';
+        model4.style.display = 'none';
     },500);
 };
 var qqIcon=getId('QQ_icon');
@@ -62,22 +115,17 @@ WeChatIcon.onclick = function(){
     model_show_file= 'pic/wechat.jpg';
     modelShow();
 };
-
 sinaIcon.onclick = function(){
     model_show_caption = ' 新浪微博 ';
     model_show_file= 'pic/sina.png';
     modelShow();
 };
-
 var thirdPage=getId('third_page');
-
 window.onscroll=function () {
     var x=document.documentElement.scrollTop||document.body.scrollTop;
-
     var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
     var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     var scrolled = (winScroll / height) * 100;
-
     if(x>=100){
         loadingbar.style.display='block';
         loadingbar.style.width = scrolled + "%";
@@ -109,13 +157,22 @@ for (;i<len;i++){
 
     }
 }
-
-
-
 /**复制用户名操作**/
 var vpn = getId('vpn');
 copyClip(vpn,'abd771567');
 
+
+/*swiper*/
+var myswiper = new Swiper('.swiper-container',
+    {
+        direction: 'horizontal',
+        loop:true,
+        // loopAdditionalSlides : 3,
+        speed:1000,
+        autoplay:{
+            delay:3000
+        }
+    });
 
 /************使用函数区*********/
 
@@ -150,18 +207,32 @@ function getSSR() {
     ssrcontainer.value='ssr://NDcuODguMjIyLjQ4OjI1NTIxOm9yaWdpbjpyYzQtbWQ1OnBsYWluOmNHbDFRMlJXLz9vYmZzcGFyYW09JnJlbWFya3M9VmtsUU1TRG1sckRsaXFEbG5hRXgmZ3JvdXA9NkpDZDVZMmM1WnlJNDRHdQ'
 }
 
-function modelShow() {
+function modelShow(open=1) {
+    /**需要事先穿两个参数
+     * model_show_caption = ' 新浪微博 ';
+     model_show_file= 'pic/sina.png';
+     */
+    model1.style.display = 'none';
+    model2.style.display = 'none';
+    model3.style.display = 'none';
+    model4.style.display = 'none';
+    model5.style.display = 'none';
     var screenWidth = document.body.offsetWidth || document.documentElement.offsetWidth;
     var screenHeight = document.body.clientHeight || document.documentElement.clientHeight;
-    console.log(screenHeight + '  ' + screenWidth);
     var x=screenHeight>screenWidth?screenWidth:screenHeight;
     if(x>1000)x*=0.3;
     else x*=0.7;
     model_box.style.display = 'block';
     $(model_box).animate({opacity:1},500);
-    model_box.children[0].children[0].children[0].innerText=model_show_caption;
-    model_box.children[0].children[1].children[0].width= x;
-    model_box.children[0].children[1].children[0].src=model_show_file;
+    if (open===1){
+        // alert('ceshi');
+        model2.style.display= 'none';
+        model1.style.display= 'block';
+        model_box.children[0].children[0].children[0].innerText=model_show_caption;
+        model_box.children[0].children[2].children[0].width= x;
+        model_box.children[0].children[2].children[0].src=model_show_file;
+    }
+
 }
 
 function copyClip(op,string){

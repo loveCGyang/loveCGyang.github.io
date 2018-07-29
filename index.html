@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="style/index_css.css">
     <link rel="stylesheet" href="style/w3css.css">
     <link rel="stylesheet" href="style/w3-flat.css">
+    <link rel="stylesheet" href="style/swiper.min.css">
 
 
 </head>
@@ -25,19 +26,26 @@
             </ol>
         </div>
         <div id="loading_bar" class=""></div>
-
-        <div id="my_description" class="">
-            <div class="w3-display-middle w3-margin-top w3-center">
-                <h1 class="w3-xxlarge w3-text-white">
-                    <span class="w3-padding w3-black w3-opacity-min">
-                      <b>LCG</b>
-                    </span>
-                    <span class="w3-hide-small w3-text-white" style="font-weight: bolder">Programmer</span>
-                </h1>
-            </div>
-        </div>
-
+        <!--进度条-->
+                <div class="my_description w3-center">
+                    <div class="w3-display-middle w3-margin-top w3-center">
+                        <h1 class="w3-xxlarge w3-text-white">
+                            <span class="w3-padding w3-black w3-opacity-min">
+                              <b>LCG</b>
+                            </span>
+                            <span class="w3-hide-small w3-text-white" style="font-weight: bolder">Programmer</span>
+                            <br/> <br/>
+                        </h1>
+                        <span class="w3-padding w3-black w3-opacity-min w3-xxlarge" style="margin-top: 50px">
+                              <b>Welcome To My Blog</b>
+                            </span>
+                    </div>
+                </div>
     </div>
+
+
+    <!--第一页完毕-->
+
     <div id="mid_message">
         <h2 class="text-center" style="margin-top: 50px">About Me</h2>
         <p class="text-center" style="margin-top: 30px"><em>LCG member</em></p>
@@ -173,29 +181,29 @@
             </div>
         </div>
 
-        <div class="col-md-8 col-md-offset-3 container" style="margin-top: 50px">
+        <div class="col-md-8 col-md-offset-3 container col-xs-12" style="margin-top: 50px">
             Swing by for a cup of <svg class="icon" style="width: 2em; height: 2em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="11139"><path d="M950.796288 365.756416q0-45.71136-31.997952-77.709312t-77.709312-31.997952l-36.569088 0 0 219.414528 36.569088 0q45.71136 0 77.709312-31.997952t31.997952-77.709312zm-950.796288 438.829056l1023.934464 0q0 60.567552-42.8544 103.421952t-103.421952 42.8544l-731.38176 0q-60.567552 0-103.421952-42.8544t-42.8544-103.421952zm1060.503552-438.829056q0 90.851328-64.2816 155.132928t-155.132928 64.2816l-36.569088 0 0 18.284544q0 52.568064-37.711872 90.279936t-90.279936 37.711872l-402.259968 0q-52.568064 0-90.279936-37.711872t-37.711872-90.279936l0-420.544512q0-14.856192 10.856448-25.71264t25.71264-10.856448l658.243584 0q90.851328 0 155.132928 64.2816t64.2816 155.132928z" p-id="11140"></path></svg>
             , or leave me a note:
             <br/>
             <form class="col-md-9" style="margin-top: 20px">
                 <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
                     <div class="w3-half">
-                        <input class="w3-input w3-border" type="text" placeholder="Name" required="" name="Name">
+                        <input class="w3-input w3-border" id="input_name" type="text" placeholder="Your Name(输真名！)" required="" name="Name" maxlength="4" minlength="2">
                     </div>
                     <div class="w3-half">
                         <input class="w3-input w3-border" type="text" placeholder="Email(可不填)"  name="Email">
                     </div>
                 </div>
                 <input class="w3-input w3-border" type="text" placeholder="Message" required="" name="Message">
-                <button class="w3-button w3-flat-turquoise w3-right w3-section" id="fakebtn">
+                <div class="w3-button w3-flat-turquoise w3-right" id="fakebtn"  style="margin-top: 20px">
                     <svg class="icon" style="width: 1.5em; height: 1.5em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="12078"><path d="M933.546667 198.826667c-9.045333-13.653333-21.504-9.045333-22.528-8.874667L102.912 390.997333c-7.509333 1.877333-13.312 7.68-15.36 15.018667-2.048 7.509333 0 15.36 5.461333 20.821333l152.405333 151.552 43.690667 238.933333c0 0.512 1.706667 14.165333 16.042667 16.896 11.946667 2.218667 17.92-3.754667 18.261333-3.925333l97.450667-77.482667 76.288 75.946667c4.608 4.437333 10.752 6.826667 17.066667 6.144 6.314667-0.682667 11.946667-3.925333 15.701333-9.386667l403.968-602.794667C934.4 221.866667 941.226667 210.602667 933.546667 198.826667zM150.016 423.253333l611.84-152.064L268.970667 541.525333 150.016 423.253333zM314.538667 718.677333l-25.429333-139.434667 348.16-190.976L353.621333 595.456c0 0-3.754667 3.072-5.290667 5.12-1.365333 1.877333-2.730667 6.314667-2.730667 6.314667L314.538667 718.677333zM370.858667 675.84l30.890667 37.717333-53.248 42.325333L370.858667 675.84zM509.952 778.581333l-125.098667-153.088 0 0L831.146667 299.349333 509.952 778.581333z" p-id="12079"></path></svg>
                     把你想说的告诉我
-                </button>
+                </div>
             </form>
         </div>
 
         <hr class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1"/>
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-10 col-md-offset-1 col-xs-12">
             <h2 class="text-center" style="margin-top: 50px">My Social Media</h2>
             <p class="text-center" style="margin-top: 30px"><em>Welcome to contact me</em></p>
             <p class="text-center" style="margin-top: 20px"><em>Click It</em></p>
@@ -224,18 +232,33 @@
     </div>
     <div class="col-xs-12 col-md-12">
         <h2 class="text-center" style="margin-top: 50px">Why I Live</h2>
-        <p class="text-center" style="margin-top: 30px"><em>欣赏一段视频 (需科学前往)&nbsp;&nbsp;&nbsp;<span class="w3-text-blue-grey w3-border-bottom w3-border-amber" style="cursor: pointer" onclick="getSSR()">Get -> SSR</span></em></p>
+        <p class="text-center" style="margin-top: 30px"><em>欣赏一段YouTube视频 (需科学前往)&nbsp;&nbsp;&nbsp;<span class="w3-text-blue-grey w3-border-bottom w3-border-amber" style="cursor: pointer" onclick="getSSR()">Get -> SSR</span></em></p>
         <p class="text-center" style="margin-top: 10px">最強目標！ - 《葬禮遊戲》</p><br/>
         <div class="col-md-6 col-md-offset-3 w3-center" >
             <textarea id="ssrContainer" class="w3-text-dark-gray" style="width: 300px;height: 60px;font-size: 8px;display: none"></textarea>
             <br/>
         </div>
-
-        <div class="w3-center">r
+        <div class="w3-center">
             <iframe style="border: 1px solid #1abc9c" width="578" height="325" src="https://www.youtube.com/embed/YoGHwlDz6Ow" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
         <br/><br/><br/>
-        <p class="w3-center" style="font-size: 80px;color: #1ABC9C;margin-top: 50px">完</p>
+        <div class="col-md-8 col-md-offset-2 w3-center" >
+            <p class="w3-xlarge">将自己在大学的时光记录下来，并不想让这个四年时光草草划过</p>
+            <p class="w3-xlarge">曾经有过令自己振奋的誓言，不想让我再次想起来的时候显得苍白无力</p>
+            <p class="w3-xlarge">曾经特别想知道未来是什么样子，不想让我再次想起来的时候无法去面对</p>
+            <p class="w3-xlarge">想爬取高峰，要默默修炼。做医中翘楚，需慢慢磨砺。</p>
+            <p class="w3-xlarge">把每个阶段的自己毫无遗漏的写下来，才会发现上个阶段的自己多幼稚</p>
+            <p class="w3-xlarge">逐渐幼稚到成熟，虽然我一直幼稚</p><br/><br/><br/>
+            <div class="w3-button w3-flat-nephritis w3-center" id="fakebtn2"  style="margin-top: 20px">
+                这里有些话想和你说
+            </div>
+
+            <br/><br/><br/><br/><br/><br/>
+            <div class="w3-button w3-xxlarge w3-flat-peter-river w3-center" onclick="zanZhu()" style="margin-top: 20px">
+                赞助我
+            </div>
+        </div>
+        <p class="w3-center col-xs-12" style="font-size: 80px;color: #1ABC9C;margin-top: 50px">完</p>
     </div>
 
     <!--网站足部-->
@@ -246,11 +269,44 @@
     <!--模态框部分-->
 
     <div id="model_box">
-        <div class="w3-display-middle">
-            <h3 class="w3-center w3-xxlarge"><span></span>二维码</h3>
+        <div class="w3-display-middle" id="model-1">
+            <h3 class="w3-center w3-xxlarge"><span></span>二维码&nbsp;<span class="w3-small">长按保存</span></h3>
+            <p class="w3-center w3-text-white w3-small">由于网络问题如果图片未显示，重新点一下图标</p>
             <div class="w3-center" style="margin-top: 20px">
 
                 <img>
+            </div>
+        </div>
+
+        <div class="w3-display-middle" id="model-2">
+            <h1 class="w3-center " style="margin-bottom: 50px">在线资助山区少年<br/></h1>
+            <h2 style="margin-bottom: 50px">亲爱的<span></span>:</h2>
+            <div class="w3-xlarge">
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;首先很高兴你能够来我的博客，对此表示深深的感谢！（鞠躬）</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;这个功能得需要一台服务器才能完成。</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;由于本人是一名学生，没有足够的资金来购买一台服务器，而且此功能需要一台服务器才能够完成。</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;假如有一台服务器，就完成网页与用户之间的交互，比如评论功能，访客量，AJAX高效访问网页等。</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;而且呢，由于这个网页是设在国外的免费平台，天朝访问起来费死个劲，如果有台在国内的服务器那就大有改观了。</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;所以这个网页如果翻墙访问会更快些。</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;如果您有兴趣的话，可以选择在博客后面<span class="w3-flat-turquoise" style="cursor: pointer">赞助</span>一下我。(Thanks♪(･ω･)ﾉ)</p>
+            </div>
+        </div>
+        <div class="w3-display-middle" id="model-3">
+            <h1 class="w3-center " style="margin-bottom: 50px">Only For You<br/></h1>
+            <h2 style="margin-bottom: 50px">我最最亲爱的<span></span>:</h2>
+            <div class="w3-xlarge">
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;首先很高兴你能够来我的博客，对此表示深深的感谢！（鞠躬）</p>
+
+            </div>
+        </div>
+        <div class="w3-display-middle" id="model-4">
+            <h1 class="w3-center"><br/></h1>
+
+        </div>
+        <div class="w3-display-middle" id="model-5">
+            <h1 class="w3-center" style="margin-bottom: 100px">资助山区少年<br/></h1>
+            <div id="pay_pic" class="w3-center">
+                <img src="pic/wechatpay.png" style="width: 44%"><span> &nbsp;&nbsp;或者是 &nbsp;&nbsp;</span><img src="pic/alipay.png" style="width: 44%">
             </div>
         </div>
 
@@ -262,11 +318,14 @@
         <svg class="icon" style="width: 2.5em; height: 2.5em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="468"><path d="M679.1 468v455H345.5V468H76.8L512.3 63.1 947.8 468H679.1z" fill="#F2CA51" p-id="469"></path></svg>
 
     </div>
+
+    <!--赞助志愿内容-->
+
     <script src="script/jquery-3.3.1.min.js"></script>
-    <script src="script/swiper-3.4.2.min.js"></script>
     <script src="script/common.js"></script>
     <script src="script/index_js.js"></script>
 
     <script src="script/bootstrap.min.js"></script>
+    <script src="script/swiper.min.js"></script>
 </body>
 </html>
