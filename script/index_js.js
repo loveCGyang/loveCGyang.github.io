@@ -92,6 +92,8 @@ function zanZhu() {
     model5.style.display = 'block';
 }
 
+var youtubeplayer = getId('youTubePlayer');
+youtubeplayer.src="https://www.youtube.com/embed/YoGHwlDz6Ow";
 
 /**图标点击事件**/
 var model_box = getId("model_box");
