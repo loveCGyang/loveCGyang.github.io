@@ -154,18 +154,7 @@ a{
     cursor: pointer;
     margin-right: 30px;
 }
-#pre_second_page:before {
-    content: ' ';
-    position: fixed;
-    z-index: -1;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: url("../pic/802.jpg") center 0 no-repeat;
-    background-color: #14a99e;
-    background-size: cover;
-}
+
 #pre_second_page{
     background-color: #14a99e;
     background-image: url("../pic/802.jpg");
@@ -181,18 +170,7 @@ a{
 #second_page{
     height: auto;
 }
-#pre_second_page:before {
-    content: ' ';
-    position: fixed;
-    z-index: -1;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: url("../pic/804.jpg") center 0 no-repeat;
-    background-color: #c7b29a;
-    background-size: cover;
-}
+
 #third_page{
     background-color: #c7b29a;
     background-image: url("../pic/804.jpg");
