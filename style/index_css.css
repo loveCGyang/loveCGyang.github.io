@@ -23,6 +23,7 @@ a{
     background-position: center;
     background-size: 100%;
     overflow: hidden;
+    user-select: none;
 }
 @keyframes mymove
 {
@@ -32,23 +33,26 @@ a{
 /**************导航浪操作****************/
 #navbar{
     width: 100vw;
+    /*height: 70px;*/
     height: 70px;
     background-color: rgba(255, 255, 255, 0);
     color: #027352;
+    z-index: 2;
 }
 /* ****移动上去时候的样子-----------*/
 #navbar:hover{
-    background-color: #1ABC9C;
+    background-color: rgba(26, 188, 156, 0.79);
     transition-duration: 0.5s;
 }
 /* 导航栏左右两边的菜单*/
 #navbar a{
     display: inline-block;
     margin-left: 50px;
+    /*line-height: 70px;*/
     line-height: 70px;
-    width: 90px;
+    width: 120px;
     text-align: center;
-    font-size: 19px;
+    font-size: 26px;
     font-weight: bolder;
     color: #027352;
     text-decoration: none;
@@ -60,6 +64,40 @@ a{
     background-color: #fee121;
     transition-duration: 0.5s;
 }
+#mobile_menu{
+    margin-right: 20px;
+    line-height: 70px;
+    float: right;
+    height: 70px;
+    width: 120px;
+    cursor: pointer;
+    font-size: 20px;
+}
+#mobile_menu div span{
+
+    margin: 0 25px;
+}
+
+#mobile_menu:hover{
+    background-color: #fee121;
+    transition-duration: 0.5s;
+}
+
+
+#mobile_menu_show{
+    background-color: #fee121;
+    position: fixed;
+    display: none;
+    top:6vh;
+}
+#mobile_menu_show p{
+    margin-bottom: 0;
+    border-bottom: 1px solid #ccc;
+    line-height: 3em;
+    font-size: 2em;
+}
+
+
 #navbar_right_menu{
     float: right;
     /*margin-top: 22px;*/
@@ -73,7 +111,7 @@ a{
     /*height: 70px;*/
     /*margin-left: 10px;*/
     margin-right: 0px;
-    line-height: 69px;
+    line-height: 70px;
     text-align: center;
     font-size: 19px;
     font-weight: bolder;
@@ -91,12 +129,13 @@ a{
 
 #loading_bar{
     position: fixed;
+    z-index: 3;
     display: none;
     z-index: 1;
     top: 0px;
     width: 60%;
     height: 8px;
-    background-color: #4caf50;
+    background-color: #fee121;
 }
 /****************导航栏内容完毕*************/
 /**头像内容**/
@@ -167,10 +206,9 @@ a{
     /*height: 150px;*/
 }
 
-#second_page{
+#second_page {
     height: auto;
 }
-
 #third_page{
     background-color: #c7b29a;
     background-image: url("../pic/804.jpg");

@@ -1,12 +1,80 @@
+
 var navbar_right_menu = document.getElementById('navbar_right_menu');
 var i = 0;
 var len;
 var navbar = document.getElementById('navbar');
 var iframes= getTags('iframe');
 var loadingbar=getId('loading_bar');
+var mobile_btn = getId('mobile_menu');
 iframes[0].src="http://www.google.cn/maps/embed?pb=!1m18!1m12!1m3!1d385387.70417984686!2d120.22111249390957!3d31.440414715435203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35b384344d95ebd5%3A0xbc3734bbf9b13ffd!2z5rGf5Y2X5aSn5a2m!5e0!3m2!1szh-CN!2scn!4v1532694596445"
 i=0;
 len = navbar_right_menu.children.length;
+var mobileMenuShow = getId('mobile_menu_show');
+var menuOpen = 0;
+//判断用户端
+var ua = navigator.userAgent;
+
+var ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
+    isIphone = !ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/),
+    isAndroid = ua.match(/(Android)\s+([\d.]+)/),
+    isMobile = isIphone || isAndroid;
+//或者单独判断iphone或android
+if(isIphone || isAndroid){
+    console.log('ap ad');
+    navbar.style.height = '6vh';
+    navbar.getElementsByTagName('a')[0].style.lineHeight = '6vh';
+    navbar.children[1].style.lineHeight = '6vh';
+    navbar.children[1].style.height = '6vh';
+    navbar.children[1].style.width = '150px';
+    navbar.children[1].style.fontSize = '25px';
+    mobile_btn.onclick = function () {
+
+        if(!menuOpen){
+            mobileMenuShow.style.display = 'block';
+            this.style.backgroundColor = '#fee121';
+            menuOpen = 1;
+        }else {
+            mobileMenuShow.style.display = 'none';
+            this.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+            menuOpen = 0;
+        }
+
+    };
+
+    i=0; len = mobileMenuShow.children.length;
+    for (;i<len;i++){
+        var target0730 = ['#mid_message','#pre_second_page','#third_page'];
+        var mobileMenuPTag = mobileMenuShow.children[i];
+        if(i<2){
+            mobileMenuPTag.target = target0730[i];
+            mobileMenuPTag.onclick = function () {
+                menuHide();
+                scrollTo(this.target,1500);
+            }
+        }
+        else if(i>=3){
+            if(i===3){
+                mobileMenuPTag.onclick = function () {
+                    menuHide();
+                }
+                    //code
+                }
+            if(i===4){
+                mobileMenuPTag.onclick = function () {
+                    menuHide();
+                    zanZhu();
+                }
+            }
+        }
+
+    }
+
+
+}else{
+    console.log('pc');
+}
+
+
 var model_show_caption,model_show_file;
 for (; i< len ; i++){
     var li = navbar_right_menu.children[i];
@@ -38,14 +106,12 @@ var model2=getId('model-2');
 var model3=getId('model-3');
 var model4=getId('model-4');
 var model5=getId('model-5');
+var model6=getId('model-6');
 var input_name = getId('input_name');
 fakebtn.onclick=function(){
     modelShow(0);
     if (input_name.value.length < 2){
         console.log('l:'+input_name.value.length);
-        model2.style.display = 'none';
-        model1.style.display = 'none';
-        model3.style.display = 'none';
         model4.style.display = 'block';
         if (input_name.value.length === 0) {
 
@@ -62,14 +128,14 @@ fakebtn.onclick=function(){
             model3.children[2].innerHTML = '<p>&nbsp;&nbsp;&nbsp;&nbsp;首先很高兴你能够来我的博客，对此表示深深的感谢！（鞠躬）</p><p>&nbsp;&nbsp;&nbsp;&nbsp;这里有一首小诗：</p><p>&nbsp;&nbsp;&nbsp;&nbsp;低的头走在路一旁的是我</p><p>&nbsp;&nbsp;&nbsp;&nbsp;别人不明白我内心是悲还是喜</p><p>&nbsp;&nbsp;&nbsp;&nbsp;商店的布偶又是谁的新欢</p><p>&nbsp;&nbsp;&nbsp;&nbsp;雨停，停下脚步，原来是你</p><p>&nbsp;&nbsp;&nbsp;&nbsp;（相视）...</p>'
         }else{
             model2.style.display = 'block';
-            if(input_name.value.includes('爸爸')){
-                model2.children[1].children[0].innerText= input_name.value.replace('爸爸','儿子');
-            }else if(input_name.value.includes('父亲')){
-                model2.children[1].children[0].innerText=input_name.value.replace('父亲','儿子');
-            }else if(input_name.value.includes('亲爹')){
-                model2.children[1].children[0].innerText=input_name.value.replace('亲爹','儿子');
-            }else{
-                model2.children[1].children[0].innerText=input_name.value;
+            var filter = ['爸爸','父亲','dad','daddy','爹地','亲爹','爹爹','尊父','父长','father'];
+            var name_call = model2.children[1].children[0];
+            i = 0;len = filter.length;
+            for (; i < len ; i++){
+                if(input_name.value.includes(filter[i])){
+                    name_call.innerText = input_name.value.replace(filter[i],'儿子');
+                    break;
+                }
             }
         }
     }
@@ -93,17 +159,20 @@ function zanZhu() {
 }
 
 var youtubeplayer = getId('youTubePlayer');
-youtubeplayer.src="https://www.youtube.com/embed/YoGHwlDz6Ow";
+youtubeplayer.onclick = function () {
+    this.innerHTML = '<iframe src="https://www.youtube.com/embed/YoGHwlDz6Ow" width="578" height="325" frameborder="0" allow="encrypted-media" allowfullscreen style="margin: 0"></iframe>';
+
+};
 
 /**图标点击事件**/
 var model_box = getId("model_box");
-model_box.onclick = function () {
-    $(this).animate({opacity:0},500);
-    setTimeout(function () {
-        model_box.style.display='none';
-        model4.style.display = 'none';
-    },500);
-};
+model_box.addEventListener('click',function () {
+        $(this).animate({opacity:0},500);
+        setTimeout(function () {
+            model_box.style.display='none';
+            model4.style.display = 'none';
+        },500);
+},false);
 var qqIcon=getId('QQ_icon');
 var WeChatIcon=getId('WeChat_icon');
 var sinaIcon=getId('sina_icon');
@@ -124,6 +193,7 @@ sinaIcon.onclick = function(){
 };
 var thirdPage=getId('third_page');
 window.onscroll=function () {
+    menuHide()
     var x=document.documentElement.scrollTop||document.body.scrollTop;
     var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
     var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -131,16 +201,30 @@ window.onscroll=function () {
     if(x>=100){
         loadingbar.style.display='block';
         loadingbar.style.width = scrolled + "%";
+
+
     }
     else {
         loadingbar.style.display='none';
+
     }
 
-    if(x>=784){
+    if(x>=984){
         backtotop.style.display='block';
+        if(isIphone || isAndroid){
+            navbar.style.position= 'fixed';
+            navbar.style.backgroundColor= 'rgba(26, 188, 156, 0.79)';
+            loadingbar.style.marginTop =  "6vh";
+
+        }
     }
     else {
         backtotop.style.display='none';
+        if(isIphone || isAndroid){
+            navbar.style.position= '';
+            navbar.style.backgroundColor= 'rgba(255, 255, 255, 0)';
+            loadingbar.style.marginTop =  "0px";
+        }
     }
     thirdPage.offsetTop = getId('icon_list').offsetTop+getId('icon_list').offsetHeight;
 
@@ -162,19 +246,6 @@ for (;i<len;i++){
 /**复制用户名操作**/
 var vpn = getId('vpn');
 copyClip(vpn,'abd771567');
-
-
-/*swiper*/
-var myswiper = new Swiper('.swiper-container',
-    {
-        direction: 'horizontal',
-        loop:true,
-        // loopAdditionalSlides : 3,
-        speed:1000,
-        autoplay:{
-            delay:3000
-        }
-    });
 
 /************使用函数区*********/
 
@@ -219,6 +290,7 @@ function modelShow(open=1) {
     model3.style.display = 'none';
     model4.style.display = 'none';
     model5.style.display = 'none';
+    model6.style.display = 'none';
     var screenWidth = document.body.offsetWidth || document.documentElement.offsetWidth;
     var screenHeight = document.body.clientHeight || document.documentElement.clientHeight;
     var x=screenHeight>screenWidth?screenWidth:screenHeight;
@@ -254,7 +326,11 @@ function copyClip(op,string){
     },false);
 }
 
-
+function menuHide() {
+    mobileMenuShow.style.display = 'none';
+    mobile_btn.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+    menuOpen = 0;
+}
 
 
 
