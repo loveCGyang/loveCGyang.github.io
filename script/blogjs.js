@@ -143,6 +143,7 @@ msg10 = new article({
     type:'认知',
     time:'2018/6/29',
     index:10,
+    encrypt:true,
     content:''
 });
 msg_array.push(msg10);
