@@ -45,7 +45,7 @@ if(isIphone || isAndroid){
     for (;i<len;i++){
         var target0730 = ['#mid_message','#pre_second_page','#third_page'];
         var mobileMenuPTag = mobileMenuShow.children[i];
-        if(i<2){
+        if(i<3){
             mobileMenuPTag.target = target0730[i];
             mobileMenuPTag.onclick = function () {
                 menuHide();
@@ -119,7 +119,6 @@ fakebtn.onclick=function(){
         }else {
             model4.children[0].innerText = '您的名字不会就一个字吧....我不信';
         }
-
     }else {
         if(input_name.value === '王文文'|| input_name.value === 'www'){
             model3.children[0].innerText='Only For You';
@@ -136,6 +135,9 @@ fakebtn.onclick=function(){
                     name_call.innerText = input_name.value.replace(filter[i],'儿子');
                     break;
                 }
+            }
+            if(i=len-1){
+                name_call.innerText = input_name.value;
             }
         }
     }
@@ -193,7 +195,7 @@ sinaIcon.onclick = function(){
 };
 var thirdPage=getId('third_page');
 window.onscroll=function () {
-    menuHide()
+    menuHide();
     var x=document.documentElement.scrollTop||document.body.scrollTop;
     var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
     var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -240,15 +242,16 @@ for (;i<len;i++){
         nickname.style.display='block';
         nickname.children[2].innerText='复制名称';
         nickname.children[0].innerText=this.getAttribute('optxt');
-
     }
 }
 /**复制用户名操作**/
 var vpn = getId('vpn');
 copyClip(vpn,'abd771567');
 
-/************使用函数区*********/
 
+
+
+/************使用函数区*********/
 
 //右键标题li便签的函数
 function rightMenuLiClick(e) {
@@ -272,7 +275,6 @@ function rightMenuLiClick(e) {
 
     e.stopPropagation();
 }
-
 function getSSR() {
     var ssrcontainer = getId('ssrContainer');
     ssrcontainer.style.display='block';
@@ -332,7 +334,10 @@ function menuHide() {
     menuOpen = 0;
 }
 
-
+function thx() {
+    modelShow(0);
+    model6.style.display = 'block';
+}
 
 
 
