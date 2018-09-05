@@ -109,7 +109,18 @@ function article(option) {
 }
 
 var msg_array = [];
-var msg1,msg2,msg3,msg4,msg5,msg6,msg7,msg8,msg9,msg10,msg11,msg12,msg13;
+var msg1,msg2,msg3,msg4,msg5,msg6,msg7,msg8,msg9,msg10,msg11,msg12,msg13,msg14;
+
+msg14 = new article({
+    caption:'关于POJ1222熄灯问题',
+    type:'算法',
+    time:'2018/9/05',
+    index:14,
+    encrypt:false,
+    content:''
+});
+msg_array.push(msg14);
+
 msg13 = new article({
     caption:'80款大型精品游戏百度网盘合集',
     type:'福利分享',
