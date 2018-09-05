@@ -137,6 +137,98 @@
                 <div id="main_content">
                     <div id="syntax">
                         <!--<pre class="coco syntaxhighlighter brush:cpp"></pre>-->
+			    <div style="padding: 20px 20px">
+							<h4>学习阶段：枚举法</h4>
+							<h5>收获：1.用二进制的"另类"的表现形式。2.与、或、异或运算的知识及技巧。3.思维方式</h5>
+							<hr>
+							<h4>重要的考虑点：</h4>
+							<p>1.首先是运算速度的问题:打破常规，不适用二位数组，根据都是1或0的特征，来二进制来表达每行的情况，用与、或、异或运算来完成对应操作。</p>
+							<p>2.确定方案的问题，确定了第一行的灯，随机产生的连锁效应达到以下行的解决方案。</p>
+							<p>3.边界灯处理的问题</p>
+							<p>4.最最arcane的地方是异或运算：1^0=1 1^1=1 0^0=0 0^1=0</p>
+							<br>
+							<h4>Syntax:</h4>
+							<pre class="coco syntaxhighlighter brush:cpp">
+// algorithm.cpp: 定义控制台应用程序的入口点。
+//
+
+#include "stdafx.h"
+#include < iostream>
+#include < cstdio>
+#include < cmath>
+#include< cstring>
+
+using namespace std;
+
+char oL[5], lights[5], result[5];
+
+int GetBit(char c, int i) {
+	return (c >> i) & 1;
+}
+
+void SetBit(char &c, int i, int v) {
+	if (v)c |= (1 << i);
+	else c &= ~(1 << i);
+}
+
+void FlipBit(char &c, int i) {
+	c ^= (1 << i);
+}
+
+void OutputResult1(int t, char result[]) {
+	printf("PUZZLE # %d\n", t);
+	for (int i = 0; i < 5; i++) {
+		for (int j = 0; j < 6; j++)
+		{
+			printf("%d ", GetBit(result[i], j));
+		}
+		printf("\n");
+	}
+}
+
+
+int main()
+{
+	int T;
+	scanf("%d", &T);
+	for (int t = 0; t < T; t++)
+	{
+		for (int j = 0; j < 5; j++)
+			for (int k = 0; k < 6; k++)
+			{
+				int s;
+				scanf("%d", &s);
+				SetBit(oL[j], k, s);
+			}
+		for (int n = 0; n < 64; n++) {
+			int switchs = n;
+
+			memcpy(lights, oL, sizeof(oL));
+			for (int i = 0; i < 5; i++) {
+				result[i] = switchs;
+				for (int j = 0; j < 6; j++)
+				{
+					if (GetBit(switchs, j)) {
+						if (j > 0)FlipBit(lights[i], j - 1);
+						FlipBit(lights[i], j);
+						if (j < 5)FlipBit(lights[i], j + 1);
+					}
+				}
+				if (i < 5)lights[i + 1] ^= switchs;
+				switchs = lights[i];
+			}
+			if (lights[4] == 0) {
+				OutputResult1(t+1,result);
+				break;
+			}
+		}
+
+	}
+    return 0;
+}
+</pre>
+
+						</div>
 
 						<!--13 80games-->
 						<div style="padding: 20px 20px">
