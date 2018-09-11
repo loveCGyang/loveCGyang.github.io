@@ -54,7 +54,7 @@
             </div>
             <div class="col-md-12 " style="border-top: 1px solid #eee">
                 <h5>网站最近更新于：</h5>
-                <p class="w3-right">2018/9/7</p>
+                <p class="w3-right">2018/9/11</p>
             </div>
         </div>
 
@@ -137,7 +137,11 @@
                 <div id="main_content">
                     <div id="syntax">
                         <!--<pre class="coco syntaxhighlighter brush:cpp"></pre>-->
-			    <div style="padding: 20px 20px">
+						<!--
+						<div style="padding: 20px 20px"></div>
+						-->
+						<!--15&#45;&#45;phase-->
+						<div style="padding: 20px 20px">
 							<h4>学习阶段：枚举法</h4>
 							<h5>收获：1.用二进制的"另类"的表现形式。2.与、或、异或运算的知识及技巧。3.思维方式</h5>
 							<hr>
@@ -227,6 +231,19 @@ int main()
     return 0;
 }
 </pre>
+
+						</div>
+
+						<!--14&#45;&#45;unpaking-->
+						<div style="padding: 20px 20px">
+							<h4>脱壳：</h4>
+							<h5>学习心得：大部分压缩壳可以根据ESP定律来解决，100%的压缩壳用单步调试，调到OEP。</h5>
+							<h5>压缩壳只是将文件压缩，达到减小文件体积的目的。</h5>
+							<h5>保护壳：等待覆盖</h5>
+							<hr>
+							<p>压缩壳学习笔记PDF: -----<a href="pic/TraceMe/脱壳学习笔记.pdf" target="_blank" style="color: blue;font-size: 12px">压缩壳笔记</a></p>
+
+							<p>保护壳笔记PDF：-----<a href="" target="_blank" style="color: blue;font-size: 12px">保护壳笔记</a></p>
 
 						</div>
 
@@ -597,7 +614,7 @@ var ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
 //
 
 #include "stdafx.h"
-#include"stdio.h"
+	#include"stdio.h"
 #include"iostream"
 
 #include"cstdarg"
