@@ -111,15 +111,26 @@ function article(option) {
 var msg_array = [];
 var msg1,msg2,msg3,msg4,msg5,msg6,msg7,msg8,msg9,msg10,msg11,msg12,msg13,msg14;
 
+
+
 msg14 = new article({
     caption:'关于POJ1222熄灯问题',
     type:'算法',
     time:'2018/9/05',
-    index:14,
+    index:15,
     encrypt:false,
     content:''
 });
 msg_array.push(msg14);
+
+msg_array.push(new article({
+    caption:'脱壳笔记',
+    type:'LCG文章',
+    time:'2018/8/25',
+    index:14,
+    encrypt:false,
+    content:''
+}));
 
 msg13 = new article({
     caption:'80款大型精品游戏百度网盘合集',
@@ -154,7 +165,6 @@ msg10 = new article({
     type:'认知',
     time:'2018/6/29',
     index:10,
-    encrypt:true,
     content:''
 });
 msg_array.push(msg10);
