@@ -78,26 +78,31 @@ function closeSwiper() {
     var main = getId('messagePart');
     main.removeChild(swipers[0]);
 }
+var ggg=1;
 showPartMsg();
 
-var ggg=1;
+
 function showPartMsg(index) {
     var i = 0;
     if(!index){
         index = 1;
     }else {
         scrollTo('#msg_navbar',500);
+        if(index===1)ggg=1;
+        else ggg=2;
     }
+
     var msgs = document.getElementsByClassName('msg_list');
     for(; i < msgs.length ; i++){
         var msg = msgs[i];
         msg.style.display = 'none';
     }
-    if(index){
+    if(ggg === 1){
         list.style.display = 'block';
         msgs[index-1].style.display = 'block';
         content.style.display = 'none';
     }else{
+        console.log("asdasd");
         list.style.display = 'block';
         msgs[ggg-1].style.display = 'block';
         content.style.display = 'none';
