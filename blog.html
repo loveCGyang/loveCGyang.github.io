@@ -99,7 +99,7 @@
             </div>
             <div class="w3-bar w3-flat-turquoise" id="msg_navbar" style="margin-top: 10px;">
                 <button class="w3-bar-item w3-button" onclick="showPartMsg(1)">全部文章</button>
-                <!--<button class="w3-bar-item w3-button"onclick="showPartMsg(2)">福利分享</button>-->
+                <button class="w3-bar-item w3-button"onclick="showPartMsg(2)">算法与数据结构</button>
                 <!--<button class="w3-bar-item w3-button" onclick="showPartMsg(3)">福利分享</button>-->
             </div>
             <div id="list">
@@ -108,14 +108,10 @@
                     </div>
                 </div>
 
-                <!--<div class="msg_list">-->
-                    <!--<div class="col-md-12  col-xs-12 ">-->
-                        <!--<p>1121</p>-->
-                        <!--<p>1141</p>-->
-                        <!--<p>114</p>-->
-                        <!--<p>111444x11</p>-->
-                    <!--</div>-->
-                <!--</div>-->
+                <div class="msg_list">
+                    <div class="col-md-12  col-xs-12 " id = "allMsg2">
+                    </div>
+                </div>
 
                 <!--<div class="msg_list">-->
                     <!--<div class="col-md-12  col-xs-12 ">-->
@@ -128,12 +124,13 @@
             </div>
 
             <div id="content" style="display: none">
-                <span style="position: relative;top: -10px;left: 25px;cursor: pointer" onclick="showPartMsg()"><svg class="icon" style="width: 2em; height: 2em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2184"><path d="M701.198571 917.298839l0 6.51846L251.97943 923.8173l0 0c-35.471886 0-64.173578-28.767184-64.173578-64.177672 0-35.467793 28.701692-64.174602 64.173578-64.174602l0 0 385.043516 0c106.35119 0 192.522782-86.23299 192.522782-192.521758 0-106.350167-86.171592-192.522782-192.522782-192.522782L380.328633 410.420487c0 81.410148 0 150.157905 0 156.551522 0 20.555152-21.559015 35.970236-42.86732 23.87578-17.046235-9.651824-229.749638-204.743104-258.890328-221.411739-19.114336-10.906397-18.801205-37.10099 0-48.006364 20.995173-12.283768 235.013525-208.315466 259.767302-221.914182 18.174941-9.964956 41.990347 1.066285 41.990347 23.752983 0 9.149381 0 78.024028 0 158.804842l256.695337 0c177.230494 0 320.870961 143.640468 320.870961 320.869938C957.894931 758.115374 847.658248 887.594307 701.198571 917.298839z" p-id="2185"></path></svg></span>
+                <span id="back111" style="position: relative;top: -10px;left: 25px;cursor: pointer" onclick="showPartMsg()"><svg class="icon" style="width: 2em; height: 2em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2184"><path d="M701.198571 917.298839l0 6.51846L251.97943 923.8173l0 0c-35.471886 0-64.173578-28.767184-64.173578-64.177672 0-35.467793 28.701692-64.174602 64.173578-64.174602l0 0 385.043516 0c106.35119 0 192.522782-86.23299 192.522782-192.521758 0-106.350167-86.171592-192.522782-192.522782-192.522782L380.328633 410.420487c0 81.410148 0 150.157905 0 156.551522 0 20.555152-21.559015 35.970236-42.86732 23.87578-17.046235-9.651824-229.749638-204.743104-258.890328-221.411739-19.114336-10.906397-18.801205-37.10099 0-48.006364 20.995173-12.283768 235.013525-208.315466 259.767302-221.914182 18.174941-9.964956 41.990347 1.066285 41.990347 23.752983 0 9.149381 0 78.024028 0 158.804842l256.695337 0c177.230494 0 320.870961 143.640468 320.870961 320.869938C957.894931 758.115374 847.658248 887.594307 701.198571 917.298839z" p-id="2185"></path></svg></span>
                 <div id="pre_info">
                     <h1 class="w3-center" id="msg_caption">caption</h1><br/>
                     <h5 class="w3-center" style="line-height: 25px"><em id="msg_author">author</em></h5>
                     <h5 class="w3-center" style="margin-top: 25px"><em id="msg_time">time</em></h5>
                 </div>
+
                 <div id="main_content">
                     <div id="syntax">
                         <!--<pre class="coco syntaxhighlighter brush:cpp"></pre>-->
@@ -141,98 +138,7 @@
 						<div style="padding: 20px 20px"></div>
 						-->
 						<!--15&#45;&#45;phase-->
-						<div style="padding: 20px 20px">
-							<h4>学习阶段：枚举法</h4>
-							<h5>收获：1.用二进制的"另类"的表现形式。2.与、或、异或运算的知识及技巧。3.思维方式</h5>
-							<hr>
-							<h4>重要的考虑点：</h4>
-							<p>1.首先是运算速度的问题:打破常规，不适用二位数组，根据都是1或0的特征，来二进制来表达每行的情况，用与、或、异或运算来完成对应操作。</p>
-							<p>2.确定方案的问题，确定了第一行的灯，随机产生的连锁效应达到以下行的解决方案。</p>
-							<p>3.边界灯处理的问题</p>
-							<p>4.最最arcane的地方是异或运算：1^0=1 1^1=1 0^0=0 0^1=0</p>
-							<br>
-							<h4>Syntax:</h4>
-							<pre class="coco syntaxhighlighter brush:cpp">
-// algorithm.cpp: 定义控制台应用程序的入口点。
-//
 
-#include "stdafx.h"
-#include < iostream>
-#include < cstdio>
-#include < cmath>
-#include< cstring>
-
-using namespace std;
-
-char oL[5], lights[5], result[5];
-
-int GetBit(char c, int i) {
-	return (c >> i) & 1;
-}
-
-void SetBit(char &c, int i, int v) {
-	if (v)c |= (1 << i);
-	else c &= ~(1 << i);
-}
-
-void FlipBit(char &c, int i) {
-	c ^= (1 << i);
-}
-
-void OutputResult1(int t, char result[]) {
-	printf("PUZZLE # %d\n", t);
-	for (int i = 0; i < 5; i++) {
-		for (int j = 0; j < 6; j++)
-		{
-			printf("%d ", GetBit(result[i], j));
-		}
-		printf("\n");
-	}
-}
-
-
-int main()
-{
-	int T;
-	scanf("%d", &T);
-	for (int t = 0; t < T; t++)
-	{
-		for (int j = 0; j < 5; j++)
-			for (int k = 0; k < 6; k++)
-			{
-				int s;
-				scanf("%d", &s);
-				SetBit(oL[j], k, s);
-			}
-		for (int n = 0; n < 64; n++) {
-			int switchs = n;
-
-			memcpy(lights, oL, sizeof(oL));
-			for (int i = 0; i < 5; i++) {
-				result[i] = switchs;
-				for (int j = 0; j < 6; j++)
-				{
-					if (GetBit(switchs, j)) {
-						if (j > 0)FlipBit(lights[i], j - 1);
-						FlipBit(lights[i], j);
-						if (j < 5)FlipBit(lights[i], j + 1);
-					}
-				}
-				if (i < 5)lights[i + 1] ^= switchs;
-				switchs = lights[i];
-			}
-			if (lights[4] == 0) {
-				OutputResult1(t+1,result);
-				break;
-			}
-		}
-
-	}
-    return 0;
-}
-</pre>
-
-						</div>
 
 						<!--14&#45;&#45;unpaking-->
 						<div style="padding: 20px 20px">
@@ -610,7 +516,103 @@ var ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
                         </div>
 
                         <!--7-->
-                        <pre class="coco syntaxhighlighter brush:cpp">// ArrayDS.cpp: 定义控制台应用程序的入口点。
+
+
+                    </div>
+					<div id = "syntax2">
+						<div style="padding: 20px 20px">
+							<h4>学习阶段：枚举法</h4>
+							<h5>收获：1.用二进制的"另类"的表现形式。2.与、或、异或运算的知识及技巧。3.思维方式</h5>
+							<hr>
+							<h4>重要的考虑点：</h4>
+							<p>1.首先是运算速度的问题:打破常规，不适用二位数组，根据都是1或0的特征，来二进制来表达每行的情况，用与、或、异或运算来完成对应操作。</p>
+							<p>2.确定方案的问题，确定了第一行的灯，随机产生的连锁效应达到以下行的解决方案。</p>
+							<p>3.边界灯处理的问题</p>
+							<p>4.最最arcane的地方是异或运算：1^0=1 1^1=1 0^0=0 0^1=0</p>
+							<br>
+							<h4>Syntax:</h4>
+							<pre class="coco syntaxhighlighter brush:cpp">
+// algorithm.cpp: 定义控制台应用程序的入口点。
+//
+
+#include "stdafx.h"
+#include < iostream>
+#include < cstdio>
+#include < cmath>
+#include< cstring>
+
+using namespace std;
+
+char oL[5], lights[5], result[5];
+
+int GetBit(char c, int i) {
+	return (c >> i) & 1;
+}
+
+void SetBit(char &c, int i, int v) {
+	if (v)c |= (1 << i);
+	else c &= ~(1 << i);
+}
+
+void FlipBit(char &c, int i) {
+	c ^= (1 << i);
+}
+
+void OutputResult1(int t, char result[]) {
+	printf("PUZZLE # %d\n", t);
+	for (int i = 0; i < 5; i++) {
+		for (int j = 0; j < 6; j++)
+		{
+			printf("%d ", GetBit(result[i], j));
+		}
+		printf("\n");
+	}
+}
+
+
+int main()
+{
+	int T;
+	scanf("%d", &T);
+	for (int t = 0; t < T; t++)
+	{
+		for (int j = 0; j < 5; j++)
+			for (int k = 0; k < 6; k++)
+			{
+				int s;
+				scanf("%d", &s);
+				SetBit(oL[j], k, s);
+			}
+		for (int n = 0; n < 64; n++) {
+			int switchs = n;
+
+			memcpy(lights, oL, sizeof(oL));
+			for (int i = 0; i < 5; i++) {
+				result[i] = switchs;
+				for (int j = 0; j < 6; j++)
+				{
+					if (GetBit(switchs, j)) {
+						if (j > 0)FlipBit(lights[i], j - 1);
+						FlipBit(lights[i], j);
+						if (j < 5)FlipBit(lights[i], j + 1);
+					}
+				}
+				if (i < 5)lights[i + 1] ^= switchs;
+				switchs = lights[i];
+			}
+			if (lights[4] == 0) {
+				OutputResult1(t+1,result);
+				break;
+			}
+		}
+
+	}
+    return 0;
+}
+</pre>
+
+						</div>
+						<pre class="coco syntaxhighlighter brush:cpp">// ArrayDS.cpp: 定义控制台应用程序的入口点。
 //
 
 #include "stdafx.h"
@@ -716,8 +718,8 @@ int main()
 }
 </pre>
 
-                        <!--6-->
-                        <pre class="coco syntaxhighlighter brush:cpp">#include "stdafx.h"
+						<!--6-->
+						<pre class="coco syntaxhighlighter brush:cpp">#include "stdafx.h"
 #include"iostream"
 #define VERTEX_NUM 10
 #define ARC_NUM 55
@@ -766,7 +768,7 @@ bool initALGraph(graphType &graph) {
 	cout << "Start building net.....\n";
 	for (int i = 0; i < graph.vexnum; i++)
 	{
-		cout << "give the vNode "<<i+1<<" other parameter:\n";
+		cout << "give the vNode "<< i+1<<" other parameter:\n";
 
 		int a;
 		cout << "Do you want to add net? 0 to break:";
@@ -882,8 +884,8 @@ void BFSTraverse(graphType graph) {
 }
 </pre>
 
-                        <!--5-->
-                        <pre class="coco syntaxhighlighter brush:cpp">#include"stdio.h"
+						<!--5-->
+						<pre class="coco syntaxhighlighter brush:cpp">#include"stdio.h"
 #include"iostream"
 #define VERTEX_NUM 10
 
@@ -1078,8 +1080,8 @@ bool initOLGraph(graphType2 &graph) {
 }
 </pre>
 
-                        <!--4-->
-                        <pre class="coco syntaxhighlighter brush:cpp">// hashLinkList.cpp: 定义控制台应用程序的入口点。
+						<!--4-->
+						<pre class="coco syntaxhighlighter brush:cpp">// hashLinkList.cpp: 定义控制台应用程序的入口点。
 //
 /*
 project:hashLinkList
@@ -1250,8 +1252,8 @@ int main()
 }
 </pre>
 
-                        <!--3-->
-                        <pre class="syntaxhighlighter brush:cpp coco">// DSsort.cpp: 定义控制台应用程序的入口点。
+						<!--3-->
+						<pre class="syntaxhighlighter brush:cpp coco">// DSsort.cpp: 定义控制台应用程序的入口点。
 //
 //*************
 //Yang's assignment
@@ -1371,8 +1373,8 @@ Depth:3               6                       13
 Depth:2         #           #           11           21
                     Depth:1      #     #     #     #     #     #     #     #</pre>
 
-                        <!--2-->
-                        <pre class="coco syntaxhighlighter brush:cpp">// DSsort.cpp: 定义控制台应用程序的入口点。
+						<!--2-->
+						<pre class="coco syntaxhighlighter brush:cpp">// DSsort.cpp: 定义控制台应用程序的入口点。
 //
 //*************
 //Yang's assignment
@@ -1567,8 +1569,8 @@ Depth:2         2           4
 Depth:1      #     3     #     5
                         </pre>
 
-                        <!--1-->
-                        <pre class="coco syntaxhighlighter brush:cpp">// DSsort.cpp: 定义控制台应用程序的入口点。
+						<!--1-->
+						<pre class="coco syntaxhighlighter brush:cpp">// DSsort.cpp: 定义控制台应用程序的入口点。
 //
 //*************
 //Yangzhe's assignment
@@ -1861,7 +1863,7 @@ int main()
 }
 </pre>
 
-                    </div>
+					</div>
                 </div>
 
                     <!--二叉树的插入-->
