@@ -201,6 +201,16 @@ msg_array2.push(new article({
 }));
 
 var msg_array = [];
+
+msg_array.push(new article({
+    caption:'MySQL注入',
+    type:'web安全',
+    time:'2018/9/25',
+    index:8,
+    encrypt:false,
+    content:''
+}));
+
 msg_array.push(new article({
     caption:'脱壳笔记',
     type:'LCG文章',
